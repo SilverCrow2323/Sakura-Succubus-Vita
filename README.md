@@ -5,9 +5,9 @@ Port of Sakura Succubus for PSVita
 Sakura Succubus is a visual novel about amassing a harem of sexy succubi. Featuring a cute idol, a domineering businesswoman, and a spacey social media star, there’s no shortage of women to woo!
 
 ## How to Install
-The install process is really slow.
+The VPK install may be really slow.
 
-If you want to speed it up:
+Here's the quickest way to set the game on your Vita:
 1. Downlaod the VPK on your PC
 2. Right click on the downloaded vpk and extract it like a zip/rar file on a new folder
 3. Transfer the folder to your Vita
