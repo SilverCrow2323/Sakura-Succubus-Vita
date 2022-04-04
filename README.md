@@ -1,4 +1,8 @@
 # Sakura Succubus Vita
+<p align="center">
+  <img src="https://i.ibb.co/1GZtY2G/ss1.jpg" />
+</p>
+
 Port of Sakura Succubus for PSVita
 
 ## Description
