@@ -1,0 +1,30 @@
+name: Port bug report
+description: Report a reproducible issue with this Vita port.
+title: "[Port bug]: "
+labels: ["bug", "port-report"]
+body:
+  - type: input
+    id: firmware
+    attributes:
+      label: Vita model and firmware
+      placeholder: PS Vita 1000, firmware 3.65 Ensō
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (redact private paths and tokens)
+    validations:
+      required: false
