@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "port_id": "sakura-succubus",
+  "title": "Sakura Succubus",
+  "repository": "https://github.com/SilverCrow2323/Sakura-Succubus-Vita",
+  "platform": "psvita",
+  "engine": "renpy",
+  "status": "released",
+  "title_id": "RNPYSS001",
+  "game_data_path": "ux0:/app/RNPYSS001/",
+  "original_game_url": "https://store.steampowered.com/app/1202310/Sakura_Succubus",
+  "docs_path": "docs/ports/sakura-succubus/README.md",
+  "notes": "VPK installation may be slow on some Vita storage setups."
+}
