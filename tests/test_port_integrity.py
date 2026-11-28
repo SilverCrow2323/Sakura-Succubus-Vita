@@ -57,3 +57,34 @@ class VitaPortIntegrityTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+    def test_livearea_references_are_confined_to_contents(self):
+        contents = SCE_SYS / "livearea" / "contents"
+        root = ET.parse(contents / "template.xml").getroot()
+        for tag in ("image", "startup-image"):
+            nodes = [node for node in root.iter() if node.tag.rsplit("}", 1)[-1] == tag]
+            self.assertEqual(len(nodes), 1, tag)
+            filename = (nodes[0].text or "").strip()
+            self.assertTrue(filename, tag)
+            self.assertEqual(Path(filename).name, filename, tag)
+            self.assertNotIn("/", filename, tag)
+            self.assertNotIn("\\", filename, tag)
+            self.assertTrue((contents / filename).is_file(), filename)
+
+
+    def test_livearea_png_headers_have_positive_dimensions(self):
+        relative_files = (
+            "icon0.png",
+            "pic0.png",
+            "livearea/contents/bg.png",
+            "livearea/contents/startup.png",
+        )
+        for relative in relative_files:
+            data = (SCE_SYS / relative).read_bytes()
+            self.assertGreaterEqual(len(data), 24, relative)
+            self.assertEqual(data[:8], b"\\x89PNG\\r\\n\\x1a\\n", relative)
+            self.assertEqual(data[12:16], b"IHDR", relative)
+            width, height = struct.unpack(">II", data[16:24])
+            self.assertGreater(width, 0, relative)
+            self.assertGreater(height, 0, relative)
